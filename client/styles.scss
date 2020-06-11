@@ -1,6 +1,15 @@
-$primary-color: white;
-$bg: black;
+$text-color: blanchedAlmond;
+$bg: rgba(36, 52, 71, 1);
 h1 {
-  color: $primary-color;
+  color: $text-color;
   background-color: $bg;
+}
+
+html {
+  background-color: $bg;
+}
+
+body {
+  width: 75%;
+  margin: auto;
 }
