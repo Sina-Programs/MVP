@@ -101,14 +101,22 @@ export default function Financials(props) {
             style={{
               background: 'rgba(20,29,38, 1)',
               color: props.companyData.metric
-                ? props.companyData.metric.beta < 1
-                  ? 'mediumseagreen'
-                  : 'crimson'
+                ? props.companyData.metric.beta
+                  ? props.companyData.metric.beta !== null
+                    ? props.companyData.metric.beta < 1
+                      ? 'mediumseagreen'
+                      : 'crimson'
+                    : 'white'
+                  : 'white'
                 : 'white',
             }}
           >
             {props.companyData.metric
-              ? 'Beta: ' + props.companyData.metric.beta.toFixed(2)
+              ? props.companyData.metric.beta
+                ? props.companyData.metric.beta !== null
+                  ? 'Beta: ' + props.companyData.metric.beta.toFixed(2)
+                  : 'Beta'
+                : 'Beta'
               : 'Beta'}
           </Paper>
         </Grid>
@@ -167,16 +175,24 @@ export default function Financials(props) {
             style={{
               background: 'rgba(20,29,38, 1)',
               color: props.companyData.metric
-                ? props.companyData.metric['grossMarginTTM'] > 0
-                  ? 'mediumseagreen'
-                  : 'crimson'
+                ? props.companyData.metric['grossMarginTTM']
+                  ? props.companyData.metric['grossMarginTTM'] !== null
+                    ? props.companyData.metric['grossMarginTTM'] > 0
+                      ? 'mediumseagreen'
+                      : 'crimson'
+                    : 'white'
+                  : 'white'
                 : 'white',
             }}
           >
             {props.companyData.metric
-              ? 'Gross Profit Margin (TTM): ' +
-                props.companyData.metric['grossMarginTTM'].toFixed(2) +
-                '%'
+              ? props.companyData.metric['grossMarginTTM']
+                ? props.companyData.metric['grossMarginTTM'] !== null
+                  ? 'Gross Profit Margin (TTM): ' +
+                    props.companyData.metric['grossMarginTTM'].toFixed(2) +
+                    '%'
+                  : 'Gross Profit Margin (TTM)'
+                : 'Gross Profit Margin (TTM)'
               : 'Gross Profit Margin (TTM)'}
           </Paper>
         </Grid>
