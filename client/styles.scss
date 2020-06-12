@@ -1,15 +1,30 @@
 $text-color: blanchedAlmond;
 $bg: rgba(36, 52, 71, 1);
-h1 {
-  color: $text-color;
-  background-color: $bg;
-}
 
 html {
+  width: 100%;
   background-color: $bg;
+  display: flex;
+  justify-content: center;
 }
 
 body {
+  background-color: $bg !important;
   width: 75%;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  #app {
+    width: 100%;
+
+    .App {
+      width: 100%;
+
+      .Display {
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+  }
 }

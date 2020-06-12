@@ -4,4 +4,4 @@ import App from './components/App.jsx';
 import './styles.scss';
 
 var mountNode = document.getElementById('app');
-ReactDOM.render(<App className={'App'} />, mountNode);
+ReactDOM.render(<App />, mountNode);

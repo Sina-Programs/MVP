@@ -6,14 +6,14 @@ const routes = require('./routes/routes.js');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use(bodyparser.json());
 app.use(bodyparser.text());
 app.use(bodyparser.urlencoded());
 app.use(morgan('dev'));
 
-app.use('/data', routes);
+app.use('/company', routes);
 
-const PORT = 3000;
-app.listen(PORT, () => console.log('Listening on port 3000...'));
+const PORT = 80;
+app.listen(PORT, () => console.log('Listening on port 80...'));
