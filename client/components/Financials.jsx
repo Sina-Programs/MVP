@@ -64,11 +64,15 @@ export default function Financials(props) {
                   }}
                 >
                   {props.companyData.metric
-                    ? props.companyData.c >
-                      props.companyData.metric['52WeekHigh']
-                      ? '52 Week High: $' + props.companyData.c.toFixed(2)
-                      : '52 Week High: $' +
-                        props.companyData.metric['52WeekHigh'].toFixed(2)
+                    ? props.companyData.metric['52WeekHigh']
+                      ? props.companyData.c
+                        ? props.companyData.c >
+                          props.companyData.metric['52WeekHigh']
+                          ? '52 Week High: $' + props.companyData.c.toFixed(2)
+                          : '52 Week High: $' +
+                            props.companyData.metric['52WeekHigh'].toFixed(2)
+                        : '52 Week High'
+                      : '52 Week High'
                     : '52 Week High'}
                 </Paper>
               </Grid>
@@ -82,11 +86,15 @@ export default function Financials(props) {
                   }}
                 >
                   {props.companyData.metric
-                    ? props.companyData.c <
-                      props.companyData.metric['52WeekLow']
-                      ? '52 Week Low: $' + props.companyData.c.toFixed(2)
-                      : '52 Week Low: $' +
-                        props.companyData.metric['52WeekLow'].toFixed(2)
+                    ? props.companyData.metric['52WeekLow']
+                      ? props.companyData.c
+                        ? props.companyData.c <
+                          props.companyData.metric['52WeekLow']
+                          ? '52 Week Low: $' + props.companyData.c.toFixed(2)
+                          : '52 Week Low: $' +
+                            props.companyData.metric['52WeekLow'].toFixed(2)
+                        : '52 Week Low'
+                      : '52 Week Low'
                     : '52 Week Low'}
                 </Paper>
               </Grid>
@@ -266,18 +274,22 @@ export default function Financials(props) {
                   style={{
                     background: 'rgba(20,29,38, 1)',
                     color: props.companyData.metric
-                      ? props.companyData.metric['netProfitMarginTTM'] > 0
-                        ? 'mediumseagreen'
-                        : 'crimson'
+                      ? props.companyData.metric['netProfitMarginTTM']
+                        ? props.companyData.metric['netProfitMarginTTM'] > 0
+                          ? 'mediumseagreen'
+                          : 'crimson'
+                        : 'blanchedAlmond'
                       : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
-                    ? 'Net Profit Margin (TTM): ' +
-                      props.companyData.metric['netProfitMarginTTM'].toFixed(
-                        2
-                      ) +
-                      '%'
+                    ? props.companyData.metric['netProfitMarginTTM']
+                      ? 'Net Profit Margin (TTM): ' +
+                        props.companyData.metric['netProfitMarginTTM'].toFixed(
+                          2
+                        ) +
+                        '%'
+                      : 'Net Profit Margin (TTM)'
                     : 'Net Profit Margin (TTM)'}
                 </Paper>
               </Grid>
@@ -456,20 +468,24 @@ export default function Financials(props) {
                   style={{
                     background: 'rgba(20,29,38, 1)',
                     color: props.companyData.metric
-                      ? props.companyData.metric[
-                          'totalDebt/totalEquityAnnual'
-                        ] < 100
-                        ? 'mediumseagreen'
-                        : 'crimson'
+                      ? props.companyData.metric['totalDebt/totalEquityAnnual']
+                        ? props.companyData.metric[
+                            'totalDebt/totalEquityAnnual'
+                          ] < 100
+                          ? 'mediumseagreen'
+                          : 'crimson'
+                        : 'blanchedAlmond'
                       : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
-                    ? 'Debt to Equity Ratio: ' +
-                      props.companyData.metric[
-                        'totalDebt/totalEquityAnnual'
-                      ].toFixed(2) +
-                      '%'
+                    ? props.companyData.metric['totalDebt/totalEquityAnnual']
+                      ? 'Debt to Equity Ratio: ' +
+                        props.companyData.metric[
+                          'totalDebt/totalEquityAnnual'
+                        ].toFixed(2) +
+                        '%'
+                      : 'Debt to Equity Ratio'
                     : 'Debt to Equity Ratio'}
                 </Paper>
               </Grid>
