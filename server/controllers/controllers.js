@@ -69,6 +69,17 @@ let controllers = {
         cb(err, null);
       });
   },
+
+  getNews: (cb) => {
+    axios
+      .get(`https://finnhub.io/api/v1/news?category=general&token=${api_key}`)
+      .then(({ data }) => {
+        cb(null, data);
+      })
+      .catch((err) => {
+        cb(err, null);
+      });
+  },
 };
 
 module.exports = controllers;

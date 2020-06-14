@@ -13,7 +13,7 @@ app.use(bodyparser.text());
 app.use(bodyparser.urlencoded());
 app.use(morgan('dev'));
 
-app.use('/company', routes);
+app.use('/data', routes);
 
 const PORT = 80;
 app.listen(PORT, () => console.log('Listening on port 80...'));
