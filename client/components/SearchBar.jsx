@@ -13,6 +13,20 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     width: '50%',
     margin: 'auto',
+    '& label': {
+      color: 'white',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'mediumseagreen',
+      },
+      '&:hover fieldset': {
+        borderColor: 'mediumseagreen',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'mediumseagreen',
+      },
+    },
   },
   margin: {
     margin: 'auto',
