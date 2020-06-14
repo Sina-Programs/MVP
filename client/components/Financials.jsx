@@ -138,9 +138,9 @@ export default function Financials(props) {
                           ? props.companyData.metric.beta < 1
                             ? 'mediumseagreen'
                             : 'crimson'
-                          : 'white'
-                        : 'white'
-                      : 'white',
+                          : 'blanchedAlmond'
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -186,8 +186,8 @@ export default function Financials(props) {
                           ] > 0
                           ? 'mediumseagreen'
                           : 'crimson'
-                        : 'white'
-                      : 'white',
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -213,8 +213,8 @@ export default function Financials(props) {
                           props.companyData.metric['epsNormalizedAnnual'] > 0
                           ? 'mediumseagreen'
                           : 'crimson'
-                        : 'white'
-                      : 'white',
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -241,9 +241,9 @@ export default function Financials(props) {
                           ? props.companyData.metric['grossMarginTTM'] > 0
                             ? 'mediumseagreen'
                             : 'crimson'
-                          : 'white'
-                        : 'white'
-                      : 'white',
+                          : 'blanchedAlmond'
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -269,7 +269,7 @@ export default function Financials(props) {
                       ? props.companyData.metric['netProfitMarginTTM'] > 0
                         ? 'mediumseagreen'
                         : 'crimson'
-                      : 'white',
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -293,8 +293,8 @@ export default function Financials(props) {
                           0
                           ? 'mediumseagreen'
                           : 'crimson'
-                        : 'white'
-                      : 'white',
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -320,9 +320,9 @@ export default function Financials(props) {
                           ? props.companyData.metric['currentRatioAnnual'] > 1
                             ? 'mediumseagreen'
                             : 'crimson'
-                          : 'white'
-                        : 'white'
-                      : 'white',
+                          : 'blanchedAlmond'
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -350,9 +350,9 @@ export default function Financials(props) {
                           ? props.companyData.metric['quickRatioAnnual'] > 1
                             ? 'mediumseagreen'
                             : 'crimson'
-                          : 'white'
-                        : 'white'
-                      : 'white',
+                          : 'blanchedAlmond'
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -383,9 +383,9 @@ export default function Financials(props) {
                             props.companyData.metric['peNormalizedAnnual'] >= 5
                             ? 'mediumseagreen'
                             : 'crimson'
-                          : 'white'
-                        : 'white'
-                      : 'white',
+                          : 'blanchedAlmond'
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -412,8 +412,8 @@ export default function Financials(props) {
                         ? props.companyData.metric['roeTTM'] >= 5
                           ? 'mediumseagreen'
                           : 'crimson'
-                        : 'white'
-                      : 'white',
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -436,8 +436,8 @@ export default function Financials(props) {
                         ? props.companyData.metric['roiTTM'] >= 5
                           ? 'mediumseagreen'
                           : 'crimson'
-                        : 'white'
-                      : 'white',
+                        : 'blanchedAlmond'
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
@@ -461,7 +461,7 @@ export default function Financials(props) {
                         ] < 100
                         ? 'mediumseagreen'
                         : 'crimson'
-                      : 'white',
+                      : 'blanchedAlmond',
                   }}
                 >
                   {props.companyData.metric
