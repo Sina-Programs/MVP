@@ -9,30 +9,31 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTicker: 'AMZN',
+      searchTerm: 'amazon',
       companyData: {},
       marketNews: [],
     };
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.searchCompany = this.searchCompany.bind(this);
+    this.getTicker = this.getTicker.bind(this);
     this.getNews = this.getNews.bind(this);
   }
 
   componentDidMount() {
     this.getNews();
-    this.searchCompany();
+    this.getTicker();
   }
 
   handleSearchChange(term) {
     this.setState({
-      searchTicker: term,
+      searchTerm: term,
     });
   }
 
-  searchCompany() {
+  searchCompany(ticker) {
     axios
-      .get(`http://localhost/data/company/${this.state.searchTicker}`)
+      .get(`http://localhost/data/company/${ticker}`)
       .then(({ data }) => {
         this.setState({ companyData: data });
       })
@@ -44,6 +45,19 @@ class App extends React.Component {
       .get('/data/news/')
       .then(({ data }) => {
         this.setState({ marketNews: data });
+      })
+      .catch((err) => console.log(err));
+  }
+
+  getTicker() {
+    axios
+      .get(`http://localhost/data/ticker/${this.state.searchTerm}`)
+      .then(({ data }) => {
+        if (typeof data === 'string') {
+          this.searchCompany(data);
+        } else {
+          this.setState({ companyData: data });
+        }
       })
       .catch((err) => console.log(err));
   }
@@ -66,7 +80,7 @@ class App extends React.Component {
           <SearchBar
             handleSearchChange={this.handleSearchChange}
             props
-            searchCompany={this.searchCompany}
+            getTicker={this.getTicker}
           />
         </div>
         <Display companyData={this.state.companyData} />

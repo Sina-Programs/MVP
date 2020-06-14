@@ -51,7 +51,7 @@ export default function SearchBar(props) {
       noValidate
       onSubmit={(e) => {
         e.preventDefault();
-        props.searchCompany();
+        props.getTicker();
       }}
     >
       <ThemeProvider theme={theme}>

@@ -1,4 +1,5 @@
 const axios = require('axios');
+const models = require('../models/models.js');
 const api_key = require('../API_Key.js');
 
 let controllers = {
@@ -79,6 +80,24 @@ let controllers = {
       .catch((err) => {
         cb(err, null);
       });
+  },
+
+  getTicker: (string, cb) => {
+    models.getTicker(string, (err, result) => {
+      if (err) {
+        console.log(err);
+        controllers.getCompanyData(string, (err2, result) => {
+          if (err2) {
+            console.log(err2);
+            cb(err2, null);
+          } else {
+            cb(null, result);
+          }
+        });
+      } else {
+        cb(null, result);
+      }
+    });
   },
 };
 

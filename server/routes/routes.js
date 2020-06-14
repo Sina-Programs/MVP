@@ -23,4 +23,15 @@ Router.get('/news', (req, res) => {
   });
 });
 
+Router.get('/ticker/:string', (req, res) => {
+  controllers.getTicker(req.params.string, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 module.exports = Router;

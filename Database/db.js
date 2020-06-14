@@ -15,10 +15,12 @@ const db = mongoose.connection;
 
 // create collection / schema
 let companySchema = mongoose.Schema({
-  company_id: Number,
-  ticker: String,
-  name: String,
+  description: String,
+  displaySymbol: String,
+  symbol: String,
 });
 
 // create model for documents
 let Company = mongoose.model('Company', companySchema);
+
+module.exports = Company;
