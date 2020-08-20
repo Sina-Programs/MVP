@@ -1,31 +1,34 @@
-# mvp
+# Holy Sheet
 
-Empty project.
+![alt text](https://media.giphy.com/media/W2Pjf0ZOnwFl96836I/giphy.gif)  
+Features
 
-## Building and running on localhost
+1. Company Search
+   - Name
+   - Stock Ticker
+2. News Carousel
+3. Company Card
+   - Image
+   - Sector
+   - Exchange
+4. Company Stock and Financial Data
 
-First install dependencies:
-
-```sh
-npm install
-```
-
-To create a production build:
-
-```sh
-npm run build-prod
-```
-
-To create a development build:
+### Getting started
 
 ```sh
-npm run build-dev
+$ npm install
 ```
 
-## Running
+Compile Front-End Code
 
-Open the file `dist/index.html` in your browser
+```sh
+$ npm run build-prod
+```
 
-## Credits
+Start Server
 
-Made with [createapp.dev](https://createapp.dev/)
+```sh
+$ npm run start
+```
+
+Open [localhost:80](http://localhost:80)

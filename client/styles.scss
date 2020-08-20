@@ -25,6 +25,10 @@ body {
         display: flex;
         justify-content: space-evenly;
       }
+
+      .NewsTile:hover {
+        cursor: pointer;
+      }
     }
   }
 }

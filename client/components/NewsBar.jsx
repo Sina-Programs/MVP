@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import Link from '@material-ui/icons/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,7 +33,13 @@ export default function NewsBar(props) {
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={2.5}>
         {props.news.map((article, idx) => (
-          <GridListTile key={idx}>
+          <GridListTile
+            key={idx}
+            className='NewsTile'
+            onClick={() => {
+              window.open(article.url, '_blank');
+            }}
+          >
             <img src={article.image} alt={article.category} />
             <GridListTileBar
               title={article.headline}
@@ -44,15 +48,6 @@ export default function NewsBar(props) {
                 root: classes.titleBar,
                 title: classes.title,
               }}
-              actionIcon={
-                <IconButton
-                  onClick={() => {
-                    window.open(article.url, '_blank');
-                  }}
-                >
-                  <Link className={classes.title} />
-                </IconButton>
-              }
             />
           </GridListTile>
         ))}
